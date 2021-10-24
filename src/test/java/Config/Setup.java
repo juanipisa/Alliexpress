@@ -14,7 +14,7 @@ public class Setup {
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\juani\\Desktop\\Trabajo\\LuckyApp\\AlliexpressEjercicio\\src\\test\\resources\\Drivers\\chromedriver.exe");
 		
         driver = new ChromeDriver();
-        
+
         driver.manage().window().maximize();
 	}
 }

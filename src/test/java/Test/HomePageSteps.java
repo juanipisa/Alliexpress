@@ -1,6 +1,10 @@
 package Test;
 
 import io.cucumber.java.en.When;
+
+import org.openqa.selenium.JavascriptExecutor;
+
+import Config.Setup;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 
@@ -28,6 +32,9 @@ public class HomePageSteps {
     @And("I click on the next result page$")
     public void aUserClickOnResultPage() {
     	
+    	JavascriptExecutor js = (JavascriptExecutor) Setup.driver;
+    	js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        
         this.homePage.nextResultPageBar().click();;
     }
     
