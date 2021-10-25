@@ -6,20 +6,17 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
 
 public class TearDown {
 
-	WebDriver driver = new ChromeDriver();
-
     @After
     public void quitDriver(Scenario scenario) throws Exception{
  
-    	this.takeSnapShot(driver, "Alliexpress\\Screenshots\\test.png") ; 
-        this.driver.quit();
+    	this.takeSnapShot(Setup.driver, "Alliexpress\\Screenshots\\test.png") ; 
+        Setup.driver.quit();
     }
 
     public void takeSnapShot(WebDriver webdriver,String fileWithPath) throws Exception {

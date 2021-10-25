@@ -1,8 +1,8 @@
 package Test;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
-
 import Config.Setup;
 
 public class HomePage extends BasePage {
@@ -38,8 +38,18 @@ public class HomePage extends BasePage {
 		return Setup.driver.findElement(By.xpath("//button[(@class='next-btn next-medium next-btn-normal next-pagination-item next-next')]"));
 	}
 	
-	public WebElement selectProduct(String numberOfProduct) {
-		return Setup.driver.findElement(By.xpath("(//div[(@class='_1OUGS')])[" + numberOfProduct + "]"));
+	public WebElement selectProduct(String productNumber) throws InterruptedException {
+		try {
+			Thread.sleep(1000); 
+			return Setup.driver.findElement(By.xpath("//*[@id='root']/div/div/div[2]/div[2]/div/div[2]/a["+productNumber+"]"));
+
+		}
+		
+		catch(NoSuchElementException  exceptionClick) {
+			Thread.sleep(1000); 
+			return Setup.driver.findElement(By.xpath("//*[@id='root']/div/div/div[2]/div[2]/div/div[2]/div["+productNumber+"]/a"));
+		}
+		
 	}
 	
 }

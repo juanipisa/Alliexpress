@@ -1,6 +1,7 @@
 package Test;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import Config.Setup;
 
@@ -21,8 +22,8 @@ public class ProductDetail extends BasePage {
 	}
 	
 	// returns the maximum amount you can buy
-	public String productAvailable() {
-		return Setup.driver.findElement(By.className("next-input next-medium next-input-group-auto-width")).getAttribute("aria-valuemax");
+	public WebElement productAvailable() {
+		return Setup.driver.findElement(By.xpath("//span[(@class='next-input next-medium next-input-group-auto-width')]"));
 	}
 		
 }
