@@ -21,7 +21,6 @@ public class ProductDetail extends BasePage {
 		
 	}
 	
-	// returns the maximum amount you can buy
 	public WebElement productAvailable() {
 		return Setup.driver.findElement(By.xpath("//span[(@class='next-input next-medium next-input-group-auto-width')]"));
 	}

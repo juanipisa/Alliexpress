@@ -11,7 +11,7 @@ public class HomePage extends BasePage {
 	
 	public void validatePage() {
 		this.logo();
-
+		this.searchButton();
 	}
 
 	public void goToHomePage(){
@@ -44,7 +44,7 @@ public class HomePage extends BasePage {
 			return Setup.driver.findElement(By.xpath("//*[@id='root']/div/div/div[2]/div[2]/div/div[2]/a["+productNumber+"]"));
 
 		}
-		
+
 		catch(NoSuchElementException  exceptionClick) {
 			Thread.sleep(1000); 
 			return Setup.driver.findElement(By.xpath("//*[@id='root']/div/div/div[2]/div[2]/div/div[2]/div["+productNumber+"]/a"));
